@@ -32,10 +32,11 @@ def save
     self.update
   else
     sql = <<-SQL
-      INSERT INTO songs (name, grade) 
+      INSERT INTO songs (name, grade)
       VALUES (?, ?)
     SQL
     DB[:conn].execute(sql, self.name, self.grade)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM stundents")[0][0]
-  end 
+  end
+end
 end
