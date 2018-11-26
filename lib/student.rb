@@ -29,7 +29,7 @@ class Student
 
   def save
     sql = <<-SQL
-      INSERT INTO songs (name, grade)
+      INSERT INTO songs (id, name, grade)
       VALUES (?, ?)
     SQL
 
