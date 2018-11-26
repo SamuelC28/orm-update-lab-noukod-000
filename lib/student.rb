@@ -61,7 +61,7 @@ def save
    SQL
 
    DB[:conn].execute(sql,name).map do |row|
-     new_from_db(row)[0]
+     new_from_db(row)[0][0]
    end
  end
 
