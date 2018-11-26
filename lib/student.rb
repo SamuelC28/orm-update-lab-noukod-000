@@ -40,10 +40,10 @@ def save
   end
  end
 
- def self.create(name:, grade:)
+ def self.create(name, grade)
      new_student = new(name, grade)
-     new_student.save
-     new_student
+     student= Student.save
+     student.save
  end
  def self.new_from_db(row)
    new_student = self.new
