@@ -11,7 +11,7 @@ class Student
     @name = name
     @grade = grade
   end
-  def create_table(row)
+  def self.create_table(row)
     # sql = <<-SQL
     #   INSERT INTO songs (id, name, album)
     #   VALUES (?, ?)
