@@ -11,14 +11,19 @@ class Student
     @name = name
     @grade = grade
   end
-  def create_table
-    sql = <<-SQL
-      INSERT INTO songs (id, name, album)
-      VALUES (?, ?)
-    SQL
+  def create_table(row)
+    # sql = <<-SQL
+    #   INSERT INTO songs (id, name, album)
+    #   VALUES (?, ?)
+    # SQL
 
-    DB[:conn].execute(sql, self.name, self.grade)
-    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
+    new_student = self.new
+    new_student.id = row[0]
+    new_student.name = row[1]
+    new_student.grade = row[2]
+    new_student
+    # DB[:conn].execute(sql, self.name, self.grade)
+    # @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
   end
 
 
